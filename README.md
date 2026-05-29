@@ -2,25 +2,29 @@
 
 TaskFlow is a web-based task management application developed to help users organize and manage daily tasks efficiently.
 
+The project uses EJS templating for rendering dynamic content and provides task management functionality with a clean user interface.
+
 ---
 
-## Features
+## 🚀 Features
 
-- Add tasks
-- Update tasks
+- Add new tasks
+- Update existing tasks
 - Delete tasks
-- Mark task status
-- Responsive user interface
+- Dynamic task rendering using EJS
+- User-friendly interface
 - Task management dashboard
+- CRUD operations
 
 ---
 
-## Technologies Used
+## 🛠 Technologies Used
 
 ### Frontend
 - HTML
 - CSS
 - JavaScript
+- EJS
 
 ### Backend
 - Node.js
@@ -30,3 +34,17 @@ TaskFlow is a web-based task management application developed to help users orga
 - MongoDB
 
 ---
+
+## 📂 Project Structure
+
+```txt
+TaskFlow/
+│
+├── models/
+├── routes/
+├── views/
+├── public/
+├── index.js
+├── package.json
+├── README.md
+└── .gitignore
