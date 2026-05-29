@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            background: #111;
+            padding: 40px;
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        a {
+            color: #00c6ff;
+            text-decoration: none;
+        }
+
+        .desc{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 70%;
+            margin: 20px;
+            margin-left: 15%;
+        }
+
+        #title{
+            border-radius: 10px;
+            height: 30px;
+            margin-bottom: 10px;
+            border: 2px solid black;
+        }
+        #des{
+            border-radius: 10px;
+            height: 30px;
+            border: 2px solid black;
+      }
+
+      .btn{
+        margin-left: 30%;
+      }
+      button{
+        height: 40px;
+        width: 50%;
+        border-radius: 10px;
+        border: 2px solid black;
+        color: white;
+        background-color: #00c6ff;
+      }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <form action="/edit/<%= task._id %>" method="POST">
+
+        <a href="/dashboard">⬅ Back</a>
+
+      
+        
+        <div class="desc">
+            <input type="text" value="<%= task.title %>" name="title" id="title">
+            <input type="text" value="<%= task.description %>" name="description" id="des">
+        </div>
+
+        <div class="btn">
+            <button>Update</button>
+        </div>
+        </form>
+
+    </div>
+
+
+</body>
+
+</html>

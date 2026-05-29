@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding-top: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+
+        .create-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #2c7be5;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1a5edb;
+        }
+        
+        .tasks {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .task {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .task h3 {
+            margin-top: 0;
+        }
+
+        .task a {
+            display: inline-block;
+            margin-top: 10px;
+            margin-right: 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .read {
+            color: #2c7be5;
+        }
+
+        .edit {
+            color: #555;
+        }
+
+        .delete {
+            color: red;
+        }
+
+        .logout {
+            background: red;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="/logout" class="logout">Logout</a>
+
+        <h1>Your Tasks</h1>
+
+        <div class="create-box">
+            <form action="/create" method="post">
+
+                <input type="text" placeholder="Task title..." name="title">
+
+                <input type="text" placeholder="Enter description..." name="description">
+
+                <button>Create Task</button>
+
+            </form>
+        </div>
+
+        <div class="tasks">
+
+            <% if(tasks.length> 0){ %>
+
+                <% tasks.forEach(function(val){ %>
+
+                    <div class="task">
+
+                        <h3>
+                            <%= val.title %>
+                        </h3>
+
+                        <a class="read" href="/read/<%= val._id %>">Read</a>
+
+                        <a class="edit" href="/edit/<%= val._id %>">Edit</a>
+
+                        <a class="delete" href="/delete/<%= val._id %>">Delete</a>
+
+                    </div>
+
+                    <% }) %>
+
+                        <% } else { %>
+
+                            <h3 style="color:white">No tasks yet</h3>
+
+                            <% } %>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            background: #111;
+            padding: 40px;
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        a {
+            color: #00c6ff;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="/dashboard">⬅ Back</a>
+
+        <h1>
+            <%= task.title %>
+        </h1>
+
+        <p>
+            <%= task.description %>
+        </p>
+
+    </div>
+
+</body>
+
+</html>
